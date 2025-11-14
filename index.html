@@ -6,53 +6,60 @@
     <title>TimeLens – Explore the Past with AI</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Marcellus&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- HERO SECTION -->
+    <!-- HEADER -->
     <header class="hero">
-        <div class="gold-overlay"></div>
-
-        <div class="hero-content">
-            <h1 class="hero-title">TimeLens</h1>
-            <h2 class="hero-subtitle">AI-Powered Monument Discovery & Manuscript Revival</h2>
-            <p class="hero-quote">“Where ancient worlds whisper — and AI listens.”</p>
-        </div>
-
-        <div class="scroll-indicator">▼</div>
+        <h1 class="title">TimeLens</h1>
+        <h2 class="subtitle">AI-Powered Monument Recognition & Manuscript Revival</h2>
+        <p class="quote">“Where ancient worlds whisper — and AI listens.”</p>
     </header>
 
-    <!-- DIVIDER -->
-    <div class="divider"></div>
-
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section class="about">
         <p>
-            TimeLens bridges centuries using cutting-edge AI. 
-            Discover monuments through images, restore Sanskrit manuscripts, 
-            extract inscriptions, and translate ancient text effortlessly — 
-            all in one unified platform.
+            TimeLens blends cutting-edge AI with the legacy of ancient civilizations. 
+            Recognize monuments instantly, restore Sanskrit manuscripts, extract inscriptions, 
+            and translate ancient texts — all with one unified platform.
         </p>
     </section>
 
-    <!-- CARDS SECTION -->
+    <!-- CARDS -->
     <section class="cards">
 
+        <!-- Monument Recognition Card -->
         <div class="card fade-in">
-            <div class="card-icon">🏛️</div>
+            <div class="icon">🏛️</div>
             <h3 class="card-title">Monument Recognition</h3>
             <p class="card-desc">
-                Identify monuments from photos and explore their complete historical background.
+                Upload a monument image — TimeLens identifies it and reveals its history instantly.
             </p>
-            <a class="card-btn" href="https://monument-recognition1.streamlit.app/" target="_blank">Explore</a>
+            <a class="button" href="https://monument-recognition1.streamlit.app/" target="_blank">Explore</a>
         </div>
 
+        <!-- Sanskrit Manuscripts Card -->
         <div class="card fade-in" style="animation-delay: 0.2s;">
-            <div class="card-icon">📜</div>
+            <div class="icon">📜</div>
             <h3 class="card-title">Sanskrit Manuscripts</h3>
-            <p
+            <p class="card-desc">
+                Clean old manuscripts, extract text, enhance with AI, and translate into 5 languages.
+            </p>
+            <a class="button" href="https://huggingface.co/spaces/premjavali05/Sanskrit_Manuscripts" target="_blank">
+                Open Workspace
+            </a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        Built with ❤️ by Prem Javali · TimeLens © 2025
+    </footer>
+
+</body>
+</html>
