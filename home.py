@@ -2,108 +2,95 @@ import streamlit as st
 
 st.set_page_config(page_title="TimeLens", page_icon="⌛", layout="wide")
 
-# ---------- CSS SECTION ----------
-page_bg = """
+# ---------- CLEAN MINIMAL PORTFOLIO CSS ----------
+st.markdown("""
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Cinzel:wght@600;700&display=swap');
 
-body {
-    font-family: 'Marcellus', serif;
-}
-
-[data-testid="stAppViewContainer"] {
-    background-image: url("https://i.ibb.co/5x1nMdc/parchment-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
+html, body, [data-testid="stAppViewContainer"] {
+    background-color: #f5efe3; /* soft parchment color */
 }
 
 .big-title {
     font-family: 'Cinzel', serif;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     text-align: center;
     font-weight: 700;
-    background: linear-gradient(90deg, #d4af37, #f6e27f, #c9a340);
+    background: linear-gradient(90deg, #a87b00, #e6c35a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: 20px;
-    text-shadow: 0px 0px 8px rgba(255,255,255,0.4);
+    margin-top: 30px;
 }
 
 .subtitle {
     text-align: center;
-    font-size: 1.3rem;
-    color: #f0e6c8;
-    margin-top: -10px;
+    font-size: 1.2rem;
+    color: #6e6137;
     font-style: italic;
+    margin-top: -12px;
 }
 
 .description {
     text-align: center;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    color: #4c3f2f;
     width: 70%;
-    margin: 15px auto;
-    color: #f9f4df;
+    margin: 20px auto;
 }
 
-.card-wrapper {
+.card-container {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-top: 50px;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .card {
-    background: rgba(0,0,0,0.45);
-    padding: 30px 25px;
-    border-radius: 18px;
-    width: 330px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    width: 320px;
     text-align: center;
-    border: 2px solid rgba(212,175,55,0.7);
-    box-shadow: 0px 0px 15px rgba(212,175,55,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #e6d8b4;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0px 0px 22px rgba(255,215,0,0.7);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
 .card-title {
     font-family: 'Cinzel', serif;
-    font-size: 1.6rem;
-    color: #ffd76a;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 12px;
+    color: #a87b00;
+    margin-bottom: 10px;
 }
 
 .card-desc {
     font-size: 1rem;
-    color: #f2e9d8;
+    color: #5a4a32;
     margin-bottom: 20px;
 }
 
-.stButton>button {
-    background: linear-gradient(90deg, #d4af37, #f6e27f);
-    color: black !important;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
+.button-custom {
+    background: linear-gradient(90deg, #a87b00, #e6c35a);
+    color: white !important;
     padding: 10px 18px;
-    cursor: pointer;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.stButton>button:hover {
-    background: linear-gradient(90deg, #f6e27f, #d4af37);
-    transform: scale(1.05);
+.button-custom:hover {
+    background: linear-gradient(90deg, #e6c35a, #a87b00);
 }
 
 </style>
-"""
-
-st.markdown(page_bg, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # ---------- TITLE ----------
 st.markdown('<div class="big-title">TimeLens: AI-Powered Manuscript, Stone Inscription Text Extraction & Monument Exploration</div>', unsafe_allow_html=True)
@@ -112,33 +99,31 @@ st.markdown('<div class="big-title">TimeLens: AI-Powered Manuscript, Stone Inscr
 st.markdown('<div class="subtitle">“Where ancient worlds whisper, and AI listens.”</div>', unsafe_allow_html=True)
 
 # ---------- DESCRIPTION ----------
-st.markdown('<div class="description">TimeLens merges advanced AI with cultural heritage — identify monuments using images, explore history, clean Sanskrit manuscripts, extract inscriptions, and translate text across five languages.</div>', unsafe_allow_html=True)
+st.markdown('<div class="description">TimeLens merges advanced AI with cultural heritage — identify monuments from images, explore history, clean Sanskrit manuscripts, extract inscriptions, and translate text across five languages.</div>', unsafe_allow_html=True)
 
+# ---------- CARDS ----------
+st.markdown('<div class="card-container">', unsafe_allow_html=True)
 
-# ---------- CARD SECTION ----------
-st.markdown('<div class="card-wrapper">', unsafe_allow_html=True)
+# Card 1
+st.markdown("""
+<div class="card">
+    <div class="card-title">🏛️ Monument Recognition</div>
+    <div class="card-desc">Upload a monument image, let TimeLens identify it, and explore its rich history.</div>
+    <a class="button-custom" href="https://monument-recognition1.streamlit.app/" target="_self">
+        Explore
+    </a>
+</div>
+""", unsafe_allow_html=True)
 
-# Use Streamlit columns for PERFECT centered alignment
-col1, col2 = st.columns([1,1], gap="large")
-
-with col1:
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown('<div class="card-title">🏛️ Monument Recognition</div>', unsafe_allow_html=True)
-    st.markdown('<div class="card-desc">Upload a monument image → TimeLens identifies it → Learn its story instantly.</div>', unsafe_allow_html=True)
-
-    if st.button("Explore"):
-        st.switch_page("https://monument-recognition1.streamlit.app/")
-
-    st.markdown('</div>', unsafe_allow_html=True)
-
-with col2:
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.markdown('<div class="card-title">📜 Sanskrit Manuscripts</div>', unsafe_allow_html=True)
-    st.markdown('<div class="card-desc">Restore manuscripts, extract text, refine with AI, and translate into 5 languages.</div>', unsafe_allow_html=True)
-
-    if st.button("Open Workspace"):
-        st.switch_page("https://huggingface.co/spaces/premjavali05/Sanskrit_Manuscripts")
-
-    st.markdown('</div>', unsafe_allow_html=True)
+# Card 2
+st.markdown("""
+<div class="card">
+    <div class="card-title">📜 Sanskrit Manuscripts</div>
+    <div class="card-desc">Clean manuscripts, extract text, refine with AI, and translate into five languages.</div>
+    <a class="button-custom" href="https://huggingface.co/spaces/premjavali05/Sanskrit_Manuscripts" target="_self">
+        Open Workspace
+    </a>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
